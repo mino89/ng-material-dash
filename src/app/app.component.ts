@@ -9,14 +9,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'material-dashboard';
-  constructor(public dataFetch: DataService) { }
-
-  ngOnInit() {
-   this.dataFetch.getList().subscribe((res:UserList) =>{
-      console.log(res)
-   })
-   this.dataFetch.getDetail(2).subscribe((res:User) =>{
-    console.log(res)
- })
-  }
+  
 }
