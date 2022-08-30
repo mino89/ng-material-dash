@@ -1,3 +1,4 @@
+import { SidenavLayoutService } from './../sidenav-layout/sidenav-layout.service';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @Input() title!: string
-  constructor() { }
+  constructor(
+    private sidenav: SidenavLayoutService
+  ) { }
+
+  switchSidenav(){
+    this.sidenav.toggle()
+  }
 
   ngOnInit(): void {
   }
