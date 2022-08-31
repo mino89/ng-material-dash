@@ -14,17 +14,17 @@ export class DataService {
     private http: HttpClient
   ) { }
 
-  getList(limit?: number): Observable<UserList> {
+  getList(limit?: number): Observable<any> {
     const params = limit ? new HttpParams().set('limit', limit) : new HttpParams()
-    return this.http.get<UserList>(
+    return this.http.get<any>(
       `${this.apiurl + environment.apiPaths.Users}`,
       { params: params }
     )
       .pipe(catchError(this.error))
   }
 
-  getDetail(id: number): Observable<User> {
-    return this.http.get<User>(`${this.apiurl + environment.apiPaths.Users}/${id}`)
+  getDetail(id: string | number): Observable<any> {
+    return this.http.get<any>(`${this.apiurl + environment.apiPaths.Users}/${id}`)
       .pipe(catchError(this.error))
   }
 

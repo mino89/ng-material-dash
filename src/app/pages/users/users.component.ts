@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/shared/data-fetch/data.service';
-import { UserList, User } from 'src/app/shared/models/user.model';
+import { User, UserList } from 'src/app/shared/models/user.model';
 
 @Component({
-  selector: 'dash-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'dash-users',
+  templateUrl: './users.component.html',
+  styleUrls: ['./users.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class UsersComponent implements OnInit {
 
   data: User[] | undefined
   columns: string[] = [
@@ -19,8 +19,9 @@ export class HomeComponent implements OnInit {
   constructor(public dataFetch: DataService) { }
 
   ngOnInit() {
-    this.dataFetch.getList(30).subscribe((res: UserList) => {
+    this.dataFetch.getList(100).subscribe((res: UserList) => {
       this.data = res.users
     })
   }
+
 }

@@ -8,32 +8,31 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
 
-
+const modules = [
+  CommonModule,
+  MatToolbarModule,
+  MatTableModule,
+  MatPaginatorModule,
+  MatButtonModule,
+  MatIconModule,
+  RouterModule,
+  MatSidenavModule,
+  MatListModule,
+  MatExpansionModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatCardModule
+]
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    MatToolbarModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatButtonModule,
-    MatIconModule,
-    RouterModule,
-    MatSidenavModule,
-    MatListModule
-  ],
-  exports: [
-    CommonModule,
-    MatToolbarModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatButtonModule,
-    MatIconModule,
-    RouterModule,
-    MatSidenavModule,
-    MatListModule
-  ]
+  imports: modules,
+  exports: modules
+
 })
 export class MaterialModule { }

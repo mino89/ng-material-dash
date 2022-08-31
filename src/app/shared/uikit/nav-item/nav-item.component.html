@@ -1,0 +1,26 @@
+<div *ngIf="data.title">
+
+    
+    <a mat-list-item *ngIf="!data.children; else hasChildren" [routerLink]="data.url">{{data.title}} </a>
+
+    <ng-template #hasChildren>
+        <mat-expansion-panel multi>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <a mat-list-item [routerLink]="data.url">{{data.title}}</a>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div *ngIf="data.children; else noChildren">
+                <div *ngFor="let child of data.children">
+                    <dash-nav-item  [data]="child"></dash-nav-item>
+                </div>
+            </div>
+            <ng-template #noChildren>
+                <a mat-list-item [routerLink]="data.path">{{data.title}}</a>
+            </ng-template>
+        </mat-expansion-panel>
+
+
+    </ng-template>
+
+</div>

@@ -5,22 +5,29 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { ListComponent } from './list/list.component';
 import { SidenavLayoutComponent } from './sidenav-layout/sidenav-layout.component';
+import { NavItemComponent } from './nav-item/nav-item.component';
+import { DetailComponent } from './detail/detail.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
     ListComponent,
-    SidenavLayoutComponent
+    SidenavLayoutComponent,
+    NavItemComponent,
+    DetailComponent,
   ],
   exports:[ 
     HeaderComponent,
     ListComponent,
-    SidenavLayoutComponent
+    SidenavLayoutComponent,
+    DetailComponent,
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ],
   providers:[
     SidenavLayoutService
