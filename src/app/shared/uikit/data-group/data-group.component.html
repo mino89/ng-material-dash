@@ -1,0 +1,25 @@
+<div *ngIf="data">
+    <div *ngFor="let field of data">
+        <mat-card *ngIf="field.group; else singleField">
+            <mat-card-header>
+                <mat-card-title>{{field.label}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <dash-data-group [data]="field.group"></dash-data-group>
+            </mat-card-content>
+        </mat-card>
+        <ng-template #singleField>
+            <mat-form-field *ngIf="field" appearance="standard">
+                <mat-label>{{field.label}}</mat-label>
+                <input 
+                [type]="field.type"
+                matInput
+                [name]="field.label"
+                (input)="change($event)"
+                [placeholder]="field.label" 
+                [formControl]="createField(field)">
+                <mat-error *ngIf="fields[field.label].invalid">invalid</mat-error> 
+            </mat-form-field>
+        </ng-template>
+    </div>
+</div>

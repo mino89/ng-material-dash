@@ -28,6 +28,16 @@ export class DataService {
       .pipe(catchError(this.error))
   }
 
+  updateDetail(id: string | number, data: any): Observable<any> {
+    const body = data
+    return this.http.put<any>(
+      `${this.apiurl + environment.apiPaths.Users}/${id}`,
+      body
+    )
+      .pipe(catchError(this.error))
+
+  }
+
 
   // Handle Errors
   error(error: HttpErrorResponse) {
@@ -37,7 +47,7 @@ export class DataService {
     } else {
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
-    console.log(errorMessage);
+
     return throwError(() => {
       return errorMessage;
     });

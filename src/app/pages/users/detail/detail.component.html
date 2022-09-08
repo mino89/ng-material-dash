@@ -1,2 +1,7 @@
 
-    <dash-detail-view [data]="data"></dash-detail-view>
+<div *ngFor="let item of dataStructure" >
+    {{item.value}}
+</div>
+
+<dash-detail-view [model]="dataModel" [data]="dataStructure" (update)="updateItem()"></dash-detail-view>
+

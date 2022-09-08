@@ -1,9 +1,6 @@
-<mat-card *ngIf="data && formFields">
-    <p>{{data.firstName}}</p>
+<button (click)="updateModel(data)">update</button>
 
 
-    <mat-form-field *ngFor="let field of formFields" appearance="standard">
-        <mat-label>{{field.label}}</mat-label>
-        <input matInput [(ngModel)]="field.value" [placeholder]="field.label">
-    </mat-form-field>
+<mat-card *ngIf="data">
+    <dash-data-group [data]="data"></dash-data-group>
 </mat-card>

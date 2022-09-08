@@ -13,7 +13,6 @@ export class NavItemComponent implements OnInit {
   constructor() { }
 
   buildLinkTree(data:Route){
-    console.log(data)
     // data._loadedRoutes.forEach((value:any) => {
     //   console.log(value)
     // })

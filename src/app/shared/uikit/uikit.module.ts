@@ -7,7 +7,8 @@ import { ListComponent } from './list/list.component';
 import { SidenavLayoutComponent } from './sidenav-layout/sidenav-layout.component';
 import { NavItemComponent } from './nav-item/nav-item.component';
 import { DetailComponent } from './detail/detail.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DataGroupComponent } from './data-group/data-group.component';
 
 
 @NgModule({
@@ -17,17 +18,20 @@ import { FormsModule } from '@angular/forms';
     SidenavLayoutComponent,
     NavItemComponent,
     DetailComponent,
+    DataGroupComponent,
   ],
   exports:[ 
     HeaderComponent,
     ListComponent,
     SidenavLayoutComponent,
     DetailComponent,
+    DataGroupComponent
   ],
   imports: [
     CommonModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers:[
     SidenavLayoutService
