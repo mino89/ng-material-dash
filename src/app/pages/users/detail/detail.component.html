@@ -1,7 +1,9 @@
-
-<div *ngFor="let item of dataStructure" >
+<div *ngFor="let item of dataStructure">
     {{item.value}}
 </div>
 
-<dash-detail-view [model]="dataModel" [data]="dataStructure" (update)="updateItem()"></dash-detail-view>
-
+<dash-detail-view 
+    [model]="dataModel" 
+    [data]="dataStructure" 
+    (update)="updateItem()">
+</dash-detail-view>

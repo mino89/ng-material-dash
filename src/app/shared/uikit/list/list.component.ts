@@ -1,5 +1,4 @@
 import { MatTableDataSource } from '@angular/material/table';
-import { User } from './../../models/user.model';
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 
@@ -9,12 +8,12 @@ import { MatPaginator } from '@angular/material/paginator';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-  @Input() data!: User[] 
+  @Input() data!: any[] 
   @Input() columns: string[] | undefined
   @Input() names!: string[]
   @Input() sizes: number[] = [20, 40]
   @Input() goToDetail: boolean = false
-  dataSource = new MatTableDataSource<User>()
+  dataSource = new MatTableDataSource<any>()
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor() { }

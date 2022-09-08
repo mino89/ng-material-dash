@@ -1,5 +1,3 @@
-import { User, UserList } from './shared/models/user.model';
-import { DataService } from './shared/data-fetch/data.service';
 import { Component } from '@angular/core';
 
 @Component({

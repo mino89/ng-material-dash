@@ -1,6 +1,6 @@
+import { UsersService } from './users.service';
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/shared/data-fetch/data.service';
-import { User, UserList } from 'src/app/shared/models/user.model';
+import { User, UserList } from './user.model';
 
 @Component({
   selector: 'dash-users',
@@ -16,7 +16,7 @@ export class UsersComponent implements OnInit {
   names: string[] = [
     'nome', 'cognome', 'genere', 'altezza', 'peso', 'email', 'azioni'
   ]
-  constructor(public dataFetch: DataService) { }
+  constructor(public dataFetch: UsersService) { }
 
   ngOnInit() {
     this.dataFetch.getList(100).subscribe((res: UserList) => {

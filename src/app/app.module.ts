@@ -1,4 +1,3 @@
-import { DataFetchModule } from './shared/data-fetch/data-fetch.module';
 import { UikitModule } from './shared/uikit/uikit.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,7 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     BrowserAnimationsModule,
     UikitModule,
-    DataFetchModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

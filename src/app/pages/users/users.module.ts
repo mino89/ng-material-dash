@@ -1,3 +1,5 @@
+import { HttpClientModule } from '@angular/common/http';
+import { UsersService } from './users.service';
 import { UikitModule } from './../../shared/uikit/uikit.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -15,7 +17,11 @@ import { DetailComponent } from './detail/detail.component';
   imports: [
     UikitModule,
     CommonModule,
-    UsersRoutingModule
+    UsersRoutingModule,
+    HttpClientModule
+  ],
+  providers:[
+    UsersService
   ]
 })
 export class UsersModule { }

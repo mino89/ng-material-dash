@@ -1,5 +1,5 @@
-import { User, Address } from './../../../shared/models/user.model';
-import { DataService } from './../../../shared/data-fetch/data.service';
+import { UsersService } from './../users.service';
+
 import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -13,7 +13,7 @@ export class DetailComponent implements OnInit {
   dataModel: any[] = []
   currentId!: number
   constructor(
-    private dataFetch: DataService,
+    private dataFetch: UsersService,
     private route: ActivatedRoute
   ) { }
 
@@ -23,11 +23,6 @@ export class DetailComponent implements OnInit {
       this.dataFetch.getDetail(res['id']).subscribe(res => {
         this.dataModel = res
         this.dataStructure = [
-          {
-            label: 'id',
-            value: res.id,
-            type: 'text'
-          },
           {
             label: 'age',
             value: res.age,
