@@ -1,5 +1,18 @@
-<button (click)="updateModel(data)">update</button>
 
+
+<a mat-mini-fab color="primary" [routerLink]="['/'+route]">
+    <mat-icon >chevron_left</mat-icon>
+</a>
+<span *ngIf="model?.id; else newItem">
+    <button mat-raised-button (click)="updateModel()">update</button>
+    <button mat-raised-button color="warn" (click)="deleteModel()">delete</button>
+    <a mat-raised-button [routerLink]="['/'+route+'/new']">create new</a>
+</span>
+
+
+<ng-template #newItem>
+    <button mat-raised-button (click)="createModel()">create</button>
+</ng-template>
 
 <mat-card *ngIf="data">
     <dash-data-group [data]="data"></dash-data-group>

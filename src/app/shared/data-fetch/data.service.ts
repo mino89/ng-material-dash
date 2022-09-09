@@ -4,9 +4,9 @@ import { environment } from 'src/environments/environment';
 import { catchError, Observable, throwError } from 'rxjs';
 
 
-export class DataService {
+export abstract class DataService {
   public apiurl: string = environment.apiUrl
-  public apiPath!: string
+  abstract apiPath: string
   constructor(
     protected http: HttpClient
   ) { }
@@ -28,7 +28,7 @@ export class DataService {
   addDetail( data: any): Observable<any> {
     const body = data
     return this.http.post<any>(
-      `${this.apiurl + this.apiPath}/new`,
+      `${this.apiurl + this.apiPath}/add`,
       body
     )
     .pipe(catchError(this.error))
@@ -43,11 +43,10 @@ export class DataService {
     .pipe(catchError(this.error))
   }
 
-  deleteDetail(id: string | number, data: any): Observable<any> {
-    const body = data
+  deleteDetail(id: string | number): Observable<any> {
     return this.http.delete<any>(
       `${this.apiurl + this.apiPath}/${id}`,
-      body
+
     )
     .pipe(catchError(this.error))
   }

@@ -3,12 +3,10 @@ import { DataService } from 'src/app/shared/data-fetch/data.service';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class UsersService extends DataService {
-  override apiPath = environment.apiPaths.Users
+  apiPath = environment.apiPaths.Users
   constructor(
-     http: HttpClient
-  ) {super(http) }
+    http: HttpClient
+  ) { super(http) }
 }
