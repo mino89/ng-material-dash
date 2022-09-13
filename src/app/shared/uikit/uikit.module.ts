@@ -9,6 +9,8 @@ import { NavItemComponent } from './nav-item/nav-item.component';
 import { DetailComponent } from './detail/detail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataGroupComponent } from './data-group/data-group.component';
+import { BaseDetailComponent } from './base/detail-base.component';
+import { BaseListComponent } from './base/list-base.component';
 
 
 @NgModule({
@@ -19,13 +21,18 @@ import { DataGroupComponent } from './data-group/data-group.component';
     NavItemComponent,
     DetailComponent,
     DataGroupComponent,
+    BaseDetailComponent,
+    BaseListComponent,
   ],
   exports:[ 
     HeaderComponent,
     ListComponent,
     SidenavLayoutComponent,
     DetailComponent,
-    DataGroupComponent
+    DataGroupComponent,
+    BaseDetailComponent,
+    BaseListComponent
+
   ],
   imports: [
     CommonModule,

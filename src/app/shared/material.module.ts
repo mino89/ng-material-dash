@@ -12,6 +12,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 const modules = [
   CommonModule,
@@ -26,7 +27,8 @@ const modules = [
   MatExpansionModule,
   MatFormFieldModule,
   MatInputModule,
-  MatCardModule
+  MatCardModule,
+  MatSnackBarModule
 ]
 
 @NgModule({
