@@ -17,5 +17,6 @@ export class UsersComponent extends BaseListComponent {
     this.names = [
       'nome', 'cognome', 'genere', 'altezza', 'peso', 'email', 'azioni'
     ]
+    this.root = 'users'
   }
 }
