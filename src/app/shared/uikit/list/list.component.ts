@@ -7,13 +7,14 @@ import { MatPaginator } from '@angular/material/paginator';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
-export class ListComponent implements OnInit {
-  @Input() data!: any[] 
+export class ListComponent<T> implements OnInit {
+  @Input() type?: T
+  @Input() data: T[] = []
   @Input() columns: string[] | undefined
   @Input() names!: string[]
   @Input() sizes: number[] = [20, 40]
   @Input() goToDetail: boolean = false
-  dataSource = new MatTableDataSource<any>()
+  dataSource = new MatTableDataSource<T>()
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor() { }

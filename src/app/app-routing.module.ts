@@ -8,11 +8,11 @@ const routes: Routes = [
     title: 'users',
     loadChildren: () => import('./pages/users/users.module').then(m => m.UsersModule),
   },
-  {
-    path: 'products',
-    title: 'products',
-    loadChildren: () => import('./pages/products/products.module').then(m => m.ProductsModule),
-  },
+  // {
+  //   path: 'products',
+  //   title: 'products',
+  //   loadChildren: () => import('./pages/products/products.module').then(m => m.ProductsModule),
+  // },
   {
     path: '',
     redirectTo: 'users',

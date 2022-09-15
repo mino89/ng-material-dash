@@ -1,3 +1,4 @@
+import { User, UserList } from './user.model';
 import { UsersService } from './users.service';
 import { Component, OnInit } from '@angular/core';
 import { BaseListComponent } from 'src/app/shared/uikit/base/list-base.component';
@@ -7,7 +8,8 @@ import { BaseListComponent } from 'src/app/shared/uikit/base/list-base.component
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss']
 })
-export class UsersComponent extends BaseListComponent {
+export class UsersComponent extends BaseListComponent<User> {
+  public type!: User
   constructor(
     dataFetch: UsersService) {
     super(dataFetch)
