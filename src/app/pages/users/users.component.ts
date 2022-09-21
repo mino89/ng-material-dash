@@ -8,7 +8,7 @@ import { BaseListComponent } from 'src/app/shared/uikit/base/list-base.component
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss']
 })
-export class UsersComponent extends BaseListComponent<User> {
+export class UsersComponent extends BaseListComponent {
   public type!: User
   constructor(
     dataFetch: UsersService) {

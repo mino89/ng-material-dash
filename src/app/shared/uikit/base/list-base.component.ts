@@ -4,8 +4,8 @@ import { DataService } from "../../data-fetch/data.service";
 @Component({
     template: ''
 })
-export class BaseListComponent<T> implements OnInit{
-  public data: T[] = []
+export class BaseListComponent implements OnInit{
+  public data!: any[]
   public columns: string[] = []
   public names: string[] = []
   public root: any = ''
@@ -14,7 +14,7 @@ export class BaseListComponent<T> implements OnInit{
    }
 
   ngOnInit() {
-    this.dataFetch.getList(100).subscribe((res: T[]) => {
+    this.dataFetch.getList(100).subscribe((res: any[]) => {
       if(this.root){
         this.data = res[this.root]
       }else{

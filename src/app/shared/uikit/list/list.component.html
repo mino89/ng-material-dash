@@ -3,14 +3,17 @@
     <ng-container *ngFor="let column of columns; let i = index" [matColumnDef]="column">
         <th mat-header-cell *matHeaderCellDef> {{names[i]}} </th>
         <td mat-cell *matCellDef="let element">
-            <span *ngIf="column==='actions'; else other">
+            <ng-content select="[firstName]">
+
+            </ng-content> 
+            <!-- <span *ngIf="column==='actions'; else other">
                 <button [routerLink]="element?.id" mat-icon-button >
                     <mat-icon>more_vert</mat-icon>
                 </button>
             </span>
             <ng-template #other>
                 {{element[column]}}
-            </ng-template>
+            </ng-template> -->
         </td>
     </ng-container>
 
